@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Weatheria</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+
+    <!--FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/84489ec29b.js"
+      crossorigin="anonymous"
+    ></script>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="searchContr">
+        <input
+          type="text"
+          id="search"
+          placeholder="Enter Your Location"
+          autocomplete="off"
+        />
+        <button id="searchBtn">Search</button>
+      </div>
+      <div class="heroContr">
+        <div class="topContr">
+          <div class="imgContr">
+            <img id="weatherIcon" src="images/clear.png" alt="" />
+          </div>
+          <div class="contentContr">
+            <p class="temp">30<span>C&deg;</span></p>
+            <p class="description">Clear</p>
+            <p class="location">Subotica, RS</p>
+          </div>
+        </div>
+        <div class="bottomContr">
+          <div class="bottomLeftContr">
+            <table class="weatherInfoContr">
+              <tr>
+                <td class="icon">
+                  <i class="fa-solid fa-water"></i>
+                </td>
+                <td class="weatherInfo">
+                  <p class="humidity">0% </p>
+                  <span>Humidity</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="icon">
+                  <i class="fa-solid fa-wind"></i>
+                </td>
+                <td class="weatherInfo">
+                  <p class="wind">0 km/h</p>
+                  <span> Wind</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="icon">
+                  <i class="fa-solid fa-temperature-arrow-up"></i>
+                </td>
+                <td class="weatherInfo">
+                  <p class="maxTemp">32 C&deg;</p>
+                </td>
+              </tr>
+              <tr>
+                <td class="icon">
+                  <i class="fa-solid fa-temperature-arrow-down"></i>
+                </td>
+                <td class="weatherInfo">
+                  <p class="minTemp">28 C&deg;</p>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="bottomRightContr">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="node_modules/axios/dist/axios.min.js"></script>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

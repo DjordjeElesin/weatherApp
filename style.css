@@ -1,0 +1,233 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  width: 100%;
+  min-width: 550px;
+  min-height: 100vh;
+  background: url(/images/plufow-le-studio-bUtAqPi-wz4-unsplash.jpg);
+}
+
+/*rgb(72, 10, 69)*/
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.container .searchContr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  margin: 40px 0;
+  position: relative;
+}
+.container .searchContr #search {
+  width: 50%;
+  height: 50px;
+  border: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  padding: 0 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  transition: all 0.3s;
+  /*   z-index: 100; */
+}
+.container .searchContr #search::-moz-placeholder {
+  font-weight: 400;
+}
+.container .searchContr #search::placeholder {
+  font-weight: 400;
+}
+.container .searchContr #search:focus {
+  box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.15);
+  border: none;
+  outline: none;
+}
+.container .searchContr #searchBtn {
+  width: 15%;
+  height: 50px;
+  border: none;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  text-wrap: wrap;
+  background-color: #49108B;
+  font-weight: bold;
+  font-size: 18px;
+  color: #E26EE5;
+  transition: all 0.3s;
+}
+.container .searchContr #searchBtn:hover {
+  background-color: #3c5aa6;
+  color: #fff;
+}
+.container .heroContr {
+  /*   flex-grow: 1; */
+  height: auto;
+  width: 100%;
+  padding: 2% calc(10px + 25vw);
+}
+@media screen and (max-width: 1024px) {
+  .container .heroContr {
+    padding: 2% calc(10px + 10vw);
+  }
+}
+.container .topContr {
+  width: 100%;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  color: #49108B;
+}
+.container .topContr .imgContr {
+  width: 50%;
+  height: 100%;
+  padding: 5%;
+}
+.container .topContr .imgContr img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.container .topContr .contentContr {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  font-size: 18px;
+}
+.container .topContr .contentContr p {
+  opacity: 0.8;
+}
+.container .topContr .contentContr .temp {
+  opacity: 1;
+  font-size: 8rem;
+  font-weight: 800;
+}
+.container .topContr .contentContr .temp span {
+  font-size: 6rem;
+}
+@media screen and (max-width: 768px) {
+  .container .topContr {
+    height: 350px;
+  }
+  .container .topContr .contentContr .temp {
+    font-size: 7rem;
+  }
+  .container .topContr .contentContr .temp span {
+    font-size: 4rem;
+  }
+}
+@media screen and (max-width: 650px) {
+  .container .topContr {
+    height: 350px;
+  }
+  .container .topContr .contentContr .temp {
+    font-size: 6rem;
+  }
+  .container .topContr .contentContr .temp span {
+    font-size: 3.5rem;
+  }
+}
+.container .bottomContr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 200px;
+  border-radius: 16px;
+}
+.container .bottomContr .bottomLeftContr {
+  width: 45%;
+  height: 100%;
+  background: #E26EE5;
+  border-radius: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  padding: 5%;
+}
+.container .bottomContr .bottomLeftContr .weatherInfoContr {
+  color: #fff;
+}
+.container .bottomContr .bottomLeftContr .weatherInfoContr tr {
+  height: 40px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.container .bottomContr .bottomLeftContr .weatherInfoContr tr .icon {
+  font-size: 1.8rem;
+  width: 50px;
+  opacity: 0.9;
+}
+.container .bottomContr .bottomLeftContr .weatherInfoContr tr .weatherInfo {
+  font-size: 20px;
+  font-weight: 500;
+  display: flex;
+}
+.container .bottomContr .bottomLeftContr .weatherInfoContr tr .weatherInfo span {
+  font-size: 18px;
+  font-weight: 300;
+  margin-left: 5px;
+}
+@media screen and (max-width: 768px) {
+  .container .bottomContr .bottomLeftContr .weatherInfoContr tr .weatherInfo {
+    font-size: 18px;
+  }
+  .container .bottomContr .bottomLeftContr .weatherInfoContr tr .weatherInfo span {
+    font-size: 16px;
+  }
+}
+.container .bottomContr .bottomRightContr {
+  width: 55%;
+  height: 100%;
+  background: #49108B;
+  border-radius: inherit;
+  padding: 3% 7%;
+  gap: 2%;
+  color: #E26EE5;
+  overflow-y: scroll;
+}
+.container .bottomContr .bottomRightContr .hourWeather {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #E26EE5;
+  text-align: center;
+}
+.container .bottomContr .bottomRightContr .hourWeather img {
+  width: 13%;
+}
+.container .bottomContr .bottomRightContr .hourWeather .hour {
+  width: 40%;
+}
+.container .bottomContr .bottomRightContr .hourWeather .hourTemp {
+  width: 30%;
+}
+.container .bottomContr .bottomRightContr .hourWeather:last-of-type {
+  border: none;
+}
+.container .bottomContr .bottomRightContr::-webkit-scrollbar {
+  display: none;
+}/*# sourceMappingURL=style.css.map */
