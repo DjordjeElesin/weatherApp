@@ -68,7 +68,7 @@ body {
   transition: all 0.3s;
 }
 .container .searchContr #searchBtn:hover {
-  background-color: #3c5aa6;
+  background-color: #b93ec0;
   color: #fff;
 }
 .container .heroContr {
