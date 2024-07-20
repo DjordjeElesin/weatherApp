@@ -11,6 +11,12 @@ const weatherIcon = document.getElementById("weatherIcon"),
       minTemp = document.querySelector(".minTemp");
 
 const bottomRightContr = document.querySelector('.bottomRightContr');
+
+const notFound = document.querySelector(".notFound"),
+      imgContr = document.querySelector(".imgContr"),
+      contentContr = document.querySelector(".contentContr"),
+      weatherInfoContr = document.querySelector(".weatherInfoContr"),
+      instructions = document.querySelector(".instructions");
       
 
 
@@ -23,11 +29,21 @@ searchBtn.addEventListener("click", ()=>{
   getData(weatherURL)
   .then(updateWeather)
   .catch((error)=> console.error(error));
-
- /*  getData(forecastURL)
-  .then(updateForecast)
-  .catch((error) => console.error(error)); */
 });
+
+searchInput.addEventListener("keydown", (e) => {
+  if(e.key === "Enter"){
+    let weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value.toLowerCase()}&units=metric&appid=${APIKey}`;
+  
+    getData(weatherURL)
+      .then((data) => {
+        if(data){
+          updateWeather(data);
+        }
+      })
+      .catch((error)=> console.error(error));
+  }
+})
 
 
 const getData= (url)=>{
@@ -36,12 +52,27 @@ const getData= (url)=>{
   .then((response) => {
     console.log(response.data);
     return response.data;
-    //updateWeather(response.data);
   })
-  .catch((error) => console.error(error));
+  .catch((error) => {
+    if(error.response.status === 404){
+      notFound.style.visibility = "visible";
+      instructions.style.visibility = "hidden";
+      contentContr.style.visibility = "hidden";
+      imgContr.style.visibility = "hidden";
+      
+      throw new Error("Location was not found")
+    }
+    console.error(error)
+  });
 }
 
 const updateWeather = (data) =>{
+  instructions.style.visibility = "hidden";
+  notFound.style.visibility = "hidden";
+  contentContr.style.visibility = 'visible';
+  weatherInfoContr.style.visibility = 'visible';
+  imgContr.style.visibility = 'visible';
+
   weatherIcon.src = `images/${data.weather[0].main}.png`; 
   tempeture.innerHTML = `${Math.round(data.main.temp)}<span>C&deg;</span>`;
   description.textContent = data.weather[0].main;
@@ -61,6 +92,8 @@ const updateForecast = (data) => {
   let hourTempArr = data.forecast.forecastday[0].hour; 
   maxTemp.innerHTML = `${Math.round(data.forecast.forecastday[0].day.maxtemp_c)} C&deg;`
   minTemp.innerHTML = `${Math.round(data.forecast.forecastday[0].day.mintemp_c)} C&deg;`
+
+  bottomRightContr.innerHTML = '';
 
   hourTempArr.forEach((element) => {
     let icon = document.createElement('img');

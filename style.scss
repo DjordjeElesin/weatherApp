@@ -85,14 +85,55 @@ body{
   .topContr{
     width: 100%;
     height: 300px;
-    background: rgba(255, 255, 255, 0.7);
+    background: linear-gradient(to bottom, #fff, #fee8fe, #fdbaff);
     border-radius: 16px;
     margin-bottom: 10px;
     display: flex;
     align-items: center;
     justify-content: start;
     color: #49108B;
+    visibility: visible;
+    position: relative;
+    overflow: hidden;
 
+    .instructions{
+      font-size: 2rem;
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      padding: 0 5%;
+    }
+    .notFound{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      padding: 5%;
+      visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .notFoundImgContr{
+        width: 100%;
+        height: 70%;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+      p{
+        font-size: 1.5rem;
+        color: #ea4bb2;
+        font-weight: 400;
+      }
+
+    }
+
+    .contentContr, .imgContr{
+      visibility: hidden;
+    }
     .imgContr{
       width: 50%;
       height: 100%;
@@ -168,7 +209,7 @@ body{
     .bottomLeftContr{
       width: 45%;
       height: 100%;
-      background: #E26EE5;
+      background: linear-gradient(to bottom, #E26EE5, #E26EE5,#b93ec0) ;
       border-radius: inherit;
       display: flex;
       flex-direction: column;
@@ -178,6 +219,7 @@ body{
       
       .weatherInfoContr{
         color: #fff;
+        visibility: hidden;
         tr{
           height: 40px;
           display: flex;
@@ -221,7 +263,7 @@ body{
     .bottomRightContr{
       width: 55%;
       height: 100%;
-      background: #49108B;
+      background:linear-gradient(to bottom, #632e9f, #49108B) ;
       border-radius: inherit;
       padding: 3% 7%;
       gap: 2%;
