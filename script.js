@@ -50,7 +50,6 @@ const getData= (url)=>{
   return axios
   .get(url)
   .then((response) => {
-    console.log(response.data);
     return response.data;
   })
   .catch((error) => {
@@ -59,6 +58,9 @@ const getData= (url)=>{
       instructions.style.visibility = "hidden";
       contentContr.style.visibility = "hidden";
       imgContr.style.visibility = "hidden";
+      weatherInfoContr.style.visibility = "hidden";
+      bottomRightContr.innerHTML = ""
+
       
       throw new Error("Location was not found")
     }
@@ -73,6 +75,7 @@ const updateWeather = (data) =>{
   weatherInfoContr.style.visibility = 'visible';
   imgContr.style.visibility = 'visible';
 
+  console.log(data.weather[0].main);
   weatherIcon.src = `images/${data.weather[0].main}.png`; 
   tempeture.innerHTML = `${Math.round(data.main.temp)}<span>C&deg;</span>`;
   description.textContent = data.weather[0].main;
